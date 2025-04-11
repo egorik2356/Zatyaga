@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Счётчик Затяжек</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .counter {
+      font-size: 100px;
+      font-weight: bold;
+      margin-bottom: 60px;
+      color: #fff;
+    }
+
+    .puff-button {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: #111;
+      color: #fff;
+      border: 2px solid #fff;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.1s ease-in-out;
+      box-shadow: 0 0 20px rgba(255,255,255,0.05), inset 0 0 10px rgba(255,255,255,0.1);
+    }
+
+    .puff-button:active {
+      transform: scale(0.97);
+      box-shadow: inset 0 0 20px rgba(255,255,255,0.1);
+    }
+
+    .reset-button {
+      margin-top: 50px;
+      padding: 15px 50px;
+      border-radius: 30px;
+      background: #fff;
+      color: #000;
+      border: none;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .reset-button:hover {
+      background: #ccc;
+    }
+
+    .reset-button:active {
+      transform: scale(0.96);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="counter" id="counter">0</div>
+  <button class="puff-button" onclick="increment()">Затяжка</button>
+  <button class="reset-button" onclick="resetCounter()">Сбросить</button>
+
+  <script>
+    let count = 0;
+    const counterEl = document.getElementById('counter');
+
+    function increment() {
+      count++;
+      counterEl.textContent = count;
+    }
+
+    function resetCounter() {
+      count = 0;
+      counterEl.textContent = count;
+    }
+  </script>
+
+</body>
+</html>
